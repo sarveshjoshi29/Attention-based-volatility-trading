@@ -223,11 +223,6 @@ Test slice: 14,996 5-minute bars (~52 days).
 | Calibration (within 1σ) | 72.8% (expected 68.2%) |
 | Calibration (within 2σ) | 94.1% (expected 95.4%) |
 
-The model is well-calibrated and the strategy clearly beats Buy & Hold
-(+19.1% vs −22.6%) over this window, but the −34.8% drawdown and high
-flip count tell you the tight 0.5% stop is firing constantly at 6×
-leverage. The 52-day window is also too short to call this a stable
-Sharpe.
 
 ## Repro / Tips
 
