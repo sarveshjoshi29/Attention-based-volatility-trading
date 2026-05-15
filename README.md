@@ -224,20 +224,6 @@ Test slice: 14,996 5-minute bars (~52 days).
 | Calibration (within 2σ) | 94.1% (expected 95.4%) |
 
 
-## Repro / Tips
-
-- `StandardScaler` is fit on the **train slice only** (`BTCDataset`
-  takes `train_frac` and `val_frac` and respects them).
-- `torch.load(..., weights_only=False)` is required because the
-  checkpoint contains numpy arrays (scaler stats). Safe because *you*
-  wrote the file.
-- `add_safe_globals([...])` is also registered as a fallback in
-  case `weights_only=True` is forced.
-- Re-run `preprocess_final.ipynb` once after any feature change; the
-  model assumes the engineered columns are present in `DOGE.csv`.
-- Keep `Model.ipynb` and `doge_attention_vol_best.pt` together; the
-  checkpoint stores the exact scaler stats and hyperparameters used.
-
 ## Next steps
 
 Highest-leverage improvements, ranked:
